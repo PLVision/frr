@@ -20,6 +20,13 @@ def pytest_addoption(parser):
         action="store_true",
         help="Only set up this topology, don't run tests",
     )
+    parser.addoption(
+        '--hw-router',
+        action='store',
+        dest='r_router',
+        default=None,
+        help='Topology router name to replace with HW router.'
+    )
 
 
 def pytest_runtest_call():
